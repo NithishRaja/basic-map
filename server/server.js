@@ -5,7 +5,6 @@ var path = require('path');
 var bodyparser = require('body-parser');
 
 //including local modules
-
 var routes = require('./routes/routes.js');
 
 var app = express();
