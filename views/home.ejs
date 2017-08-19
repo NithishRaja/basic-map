@@ -1,0 +1,35 @@
+<%- contentFor('title') %>
+HOME
+
+<%- contentFor('body') %>
+<header class="page-header center-align">
+  <h1>Welcome</h1>
+</header>
+
+<section>
+  <div class="center_div">
+    <button class="btn btn-primary">Click to view maps</button>
+  </div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+  $('.btn').on('click', function(event){
+    event.preventDefault();
+    window.location.replace('http://127.0.0.1:3000/maps');
+  });
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<style>
+  .center-align {
+    text-align: center;
+  }
+  .center_div{
+    text-align: center;
+    margin: 20px auto;
+    width:80%;
+  }
+</style>

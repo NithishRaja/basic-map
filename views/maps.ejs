@@ -1,0 +1,66 @@
+<%- contentFor('title') %>
+maps
+
+<%- contentFor('body') %>
+
+<% if(_locals.error){ %>
+  <header>
+    <h1><%= _locals.error %></h1>
+  </header>
+<% }else{ %>
+
+  <header class="jumbotron">
+    <h1><%= _locals.data.results[0].formatted_address %></h1>
+    <h2><label class="label label-primary">lattitude: <%= _locals.data.results[0].geometry.location.lat %></label></h2>
+    <h2><label class="label label-primary">longitude: <%= _locals.data.results[0].geometry.location.lng %></label></h2>
+  </header>
+
+  <section>
+    <article>
+      <div id="map">
+      </div>
+    </article>
+  </section>
+<% } %>
+<aside>
+  <form method="POST" action="/maps" class="form-inline center_div">
+    <formset class="form-group">
+      <label for="address">
+        Address:
+      </label>
+      <input type="text" placeholder="enter address here" class="form-control" name="address" />
+    </formset>
+    <button class="submit btn btn-success">show in map</button>
+  </form>
+</aside>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDutg8NqYj5Se_t0jKaRbg68oCY-gCrWhE"></script>
+
+<script>
+  var map;
+  var mapOptions = {
+    zoom: 4,
+    center: new google.maps.LatLng(<%= _locals.data.results[0].geometry.location.lat %>, <%= _locals.data.results[0].geometry.location.lng %>)
+  };
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  var pos = new google.maps.LatLng(<%= _locals.data.results[0].geometry.location.lat %>, <%= _locals.data.results[0].geometry.location.lng %>);
+  var marker = new google.maps.Marker({
+    position: pos,
+    map: map
+  });
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<style>
+  #map {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+  }
+  .center_div{
+    text-align: center;
+    margin: 20px auto;
+    width:80%;
+  }
+</style>
