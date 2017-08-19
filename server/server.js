@@ -20,6 +20,7 @@ app.set('layout extractScripts', true);
 app.set('layout extractStyles', true);
 app.use(expressLayouts);
 
+//mounting body-parser middleware
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyparser.json());
 
