@@ -17,7 +17,12 @@ maps
 
   <section>
     <article>
-      <div id="map">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          MAP
+        </div>
+        <div id="map" class="panel-body">
+        </div>
       </div>
     </article>
   </section>
@@ -54,7 +59,7 @@ maps
 
 <style>
   #map {
-    width: 400px;
+    width: inherit;
     height: 400px;
     margin: 0 auto;
   }
@@ -62,5 +67,10 @@ maps
     text-align: center;
     margin: 20px auto;
     width:80%;
+  }
+  .panel {
+    text-align: center; 
+    width: auto;
+    margin: 0 auto;
   }
 </style>
