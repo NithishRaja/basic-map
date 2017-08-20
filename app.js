@@ -1,7 +1,5 @@
 var app = require('./server/server.js');
 
-//TODO place maps inside a panel
-
 //TODO provide proper documentation
 
 app.listen(app.get('port'), function(){
