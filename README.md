@@ -18,3 +18,5 @@ apikey is required for this, which is located at `credentials.js`
 MVC framework is used for organizing the code on the server side.
 
 for testing the routes `supertest` is used.
+
+for debugging run `npm run debug` and open `http://127.0.0.1:8080/debug?port=5858`.
