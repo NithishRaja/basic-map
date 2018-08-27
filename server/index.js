@@ -9,9 +9,6 @@ var routes = require('./routes/routes.js');
 
 var app = express();
 
-//setting port value
-app.set('port', process.env.PORT || 3000);
-
 //confguring view engine
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');

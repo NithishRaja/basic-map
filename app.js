@@ -1,5 +1,13 @@
-var app = require('./server/server.js');
+/*
+ * Primary file for app
+ *
+ */
 
-app.listen(app.get('port'), function(){
-  console.log('server is listening at port %d, press CTRL+C to close server', app.get('port'));
+// Dependencies
+const app = require('./server');
+const credentials = require("./credentials");
+
+// Set app to listen to specified port
+app.listen(credentials.port, function(){
+  console.log('server is listening at port %d in %s environment, press CTRL+C to exit', credentials.port, credentials.envName);
 });
